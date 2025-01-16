@@ -5,16 +5,13 @@ from transformers import BlipProcessor, BlipForConditionalGeneration
 import streamlit as st
 import re
 
-# Load BLIP model and processor
 processor = BlipProcessor.from_pretrained("Salesforce/blip-image-captioning-base")
 model = BlipForConditionalGeneration.from_pretrained("Salesforce/blip-image-captioning-base")
 stopwords = {"a", "the", "with", "and", "of", "on", "in", "is", "are", "to", "hot"}
 
-# USDA API details
 USDA_API_KEY = "nLVGxo3dSmBXw7D4ctcrKwUC6nNgqJSg3D1PWQF7"
 USDA_API_URL = "https://api.nal.usda.gov/fdc/v1/foods/search"
 
-# Fetch key nutrients
 def fetch_nutritional_info(food_item):
     params = {
         "api_key": USDA_API_KEY,

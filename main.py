@@ -23,7 +23,7 @@ def fetch_nutritional_info(food_item):
         data = response.json()
         if data.get("foods"):
             nutrients = data["foods"][0]["foodNutrients"]
-            # Filter for key nutrients
+           
             key_nutrients = {
                 "Energy": "Calories",
                 "Protein": "Protein",
@@ -68,7 +68,6 @@ def recognize_food_and_nutrition(img):
 
     return result
 
-# Streamlit App
 st.title("Food Recognition and Nutritional Analysis")
 st.write("Upload an image of food, and the app will provide its nutritional profile.")
 
